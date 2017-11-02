@@ -1,4 +1,4 @@
-name = "Julia"
+name = "Fritz"
 eyecolor = "brown"
 meal = "Pizza"
 print(paste0(name, " has ", eyecolor, " eyes and enjoys eating ", meal, " the most!"))
@@ -9,3 +9,4 @@ printer = function(name, eyecolor, meal){
 }
 
 printer("Julia", "brown", "Pizza")
+
