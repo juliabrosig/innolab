@@ -3,6 +3,7 @@ checkHeight = function(students.input = students, sex.specific = TRUE) {
   source("utils.R")
   #' The checkHeight function calculates the difference between a given data set of persons with the mean height of that data set.
   #' You can choose between the overall mean and the sex specific mean by changing the sex.specific value
+  #'
 
   # if sex.specific = T ----
   if (sex.specific == TRUE) {
