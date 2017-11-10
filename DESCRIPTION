@@ -3,7 +3,7 @@ Title: innolab is my first package
 Version: 0.0.0.9000
 Authors@R: person("Julia", "Last", email = "first.last@example.com", role = c("aut", "cre"))
 Description: I want to learn how to programm a package).
-Depends: R (>= 3.4.2)
+Depends: R (>= 3.3.1)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
