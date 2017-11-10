@@ -2,12 +2,10 @@
 % Please edit documentation in R/checkHeight.R
 \name{checkHeight}
 \alias{checkHeight}
-\title{The checkHeight function calculates the difference between a given data set of persons with the mean height of that data set.
-You can choose between the overall mean and the sex specific mean by changing the sex.specific value}
+\title{import}
 \usage{
 checkHeight(students.input = students, sex.specific = TRUE)
 }
 \description{
-The checkHeight function calculates the difference between a given data set of persons with the mean height of that data set.
-You can choose between the overall mean and the sex specific mean by changing the sex.specific value
+import
 }
