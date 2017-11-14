@@ -3,24 +3,31 @@
 #'
 #' @export
 #' @import dplyr
-checkHeight = function(students.input = students, sex.specific = TRUE) {
 
-  # if sex.specific = T ----
+checkHeight = function(students.input = students, sex.specific = TRUE,
+                       print.statement = FALSE) {
+  # if sex.specific = T
   if (sex.specific == TRUE) {
     diff = apply(students.input, MARGIN = 1, FUN = function(s){
       if (s["sex"] == "M") {
-        round(as.numeric(s["height"]) - myOwnMean(students.input$height[students.input$sex == "M"]), 2) * 100
+        round(as.numeric(s["height"]) -
+                myOwnMean(students.input$height[students.input$sex == "M"]),
+              2) * 100
       } else {
-        round(as.numeric(s["height"]) - myOwnMean(students.input$height[students.input$sex == "F"]), 2) * 100
+        round(as.numeric(s["height"]) -
+                myOwnMean(students.input$height[students.input$sex == "F"]),
+              2) * 100
       }
     })
+    students.input$diff = diff
+    print("Yippie, I calculated the mean differences!")
+    return(students.input)
 
-    students$diff = diff
-    return(students)
-
-  # if sex.specific = F ----
+  # if sex.specific = F
   } else {
-    students.input$diff = round(students.input$height - myOwnMean(students.input$height), 2) * 100
-    print(students.input)
+    students.input$diff = round(students.input$height -
+                                  myOwnMean(students.input$height), 2) * 100
+    print("Yippie, I calculated the mean differences!")
+    return(students.input)
   }
 }
