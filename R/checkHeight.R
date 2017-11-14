@@ -5,7 +5,7 @@
 #' @import dplyr
 #' @import checkmate
 
-load("students.rda")
+load("./R/data/students.rda")
 
 checkHeight = function(students.input = students, sex.specific = TRUE,
                        print.statement = FALSE) {
