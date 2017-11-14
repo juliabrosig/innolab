@@ -3,9 +3,17 @@
 #'
 #' @export
 #' @import dplyr
+#' @import checkmate
 
 checkHeight = function(students.input = students, sex.specific = TRUE,
                        print.statement = FALSE) {
+  assertLogical(sex.specific)
+  assertDataFrame(students.input,
+                  types = c("numeric", "numeric", "numeric", "factor", "character"),
+                  min.rows = 4,
+                  ncols = 5)
+  assertNumeric(students.input[, 3], lower = 1.3, upper = 2.4)
+  assertFactor(students.input[, 4], n.levels = 2)
   # if sex.specific = T
   if (sex.specific == TRUE) {
     diff = apply(students.input, MARGIN = 1, FUN = function(s){
@@ -23,7 +31,7 @@ checkHeight = function(students.input = students, sex.specific = TRUE,
     print("Yippie, I calculated the mean differences!")
     return(students.input)
 
-  # if sex.specific = F
+    # if sex.specific = F
   } else {
     students.input$diff = round(students.input$height -
                                   myOwnMean(students.input$height), 2) * 100
