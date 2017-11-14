@@ -5,10 +5,9 @@
 #' @import dplyr
 #' @import checkmate
 
-load("./R/data/students.rda")
-
 checkHeight = function(students.input = students, sex.specific = TRUE,
                        print.statement = FALSE) {
+  load("./R/data/students.rda")
   assertLogical(sex.specific)
   assertDataFrame(students.input,
                   types = c("numeric", "numeric", "numeric", "factor", "character"),
