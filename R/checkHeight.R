@@ -5,6 +5,8 @@
 #' @import dplyr
 #' @import checkmate
 
+load("students.rda")
+
 checkHeight = function(students.input = students, sex.specific = TRUE,
                        print.statement = FALSE) {
   assertLogical(sex.specific)
