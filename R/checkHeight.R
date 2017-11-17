@@ -28,14 +28,18 @@ checkHeight = function(students.input = students, sex.specific = TRUE,
       }
     })
     students.input$diff = diff
+    if (print.statement == TRUE) {
     print("Yippie, I calculated the mean differences!")
+    }
     return(students.input)
 
     # if sex.specific = F
   } else {
     students.input$diff = round(students.input$height -
                                   myOwnMean(students.input$height), 2) * 100
-    print("Yippie, I calculated the mean differences!")
+    if (print.statement == TRUE) {
+      print("Yippie, I calculated the mean differences!")
+    }
     return(students.input)
   }
 }
